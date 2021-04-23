@@ -51,6 +51,25 @@ const docThree: Resource<string[]> = {
 console.log(docThree.data);
 
 /* -------------------------------- DECORATOR ------------------------------- */
+function g(name: string) {
+  return function (
+    target: any,
+    propertyKey: string, // method
+    descriptor: PropertyDescriptor
+  ) {
+    const fn = descriptor.value;
+    descriptor.value = () => fn(name);
+  };
+}
+
+class C {
+  @g("Kaveh")
+  method(name: string) {
+    console.log("method called", name);
+  }
+}
+
+new C().method("Kasra");
 
 /* ---------------------------------- CODE ---------------------------------- */
 form.addEventListener("submit", (e: Event) => {
