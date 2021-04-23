@@ -50,6 +50,8 @@ const docThree: Resource<string[]> = {
 };
 console.log(docThree.data);
 
+/* -------------------------------- DECORATOR ------------------------------- */
+
 /* ---------------------------------- CODE ---------------------------------- */
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();

@@ -1,10 +1,12 @@
-export class Invoice {
-    constructor(client, details, amount) {
+var Invoice = (function () {
+    function Invoice(client, details, amount) {
         this.client = client;
         this.details = details;
         this.amount = amount;
     }
-    format() {
-        return `${this.client} owes £${this.amount} for ${this.details}`;
-    }
-}
+    Invoice.prototype.format = function () {
+        return this.client + " owes \u00A3" + this.amount + " for " + this.details;
+    };
+    return Invoice;
+}());
+export { Invoice };

@@ -1,18 +1,20 @@
 import { Position } from "../enums/position.js";
-export class ListTemplate {
-    constructor(container) {
+var ListTemplate = (function () {
+    function ListTemplate(container) {
         this.container = container;
     }
-    render(item, heading, position) {
-        const li = document.createElement("li");
-        const h4 = document.createElement("h4");
+    ListTemplate.prototype.render = function (item, heading, position) {
+        var li = document.createElement("li");
+        var h4 = document.createElement("h4");
         h4.innerText = heading;
         li.append(h4);
-        const p = document.createElement("p");
+        var p = document.createElement("p");
         p.innerText = item.format();
         li.append(p);
         position === Position.START
             ? this.container.prepend(li)
             : this.container.append(li);
-    }
-}
+    };
+    return ListTemplate;
+}());
+export { ListTemplate };
