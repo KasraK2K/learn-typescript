@@ -51,7 +51,7 @@ const docThree: Resource<string[]> = {
 console.log(docThree.data);
 
 /* -------------------------------- DECORATOR ------------------------------- */
-function g(name: string) {
+function MyDecorator(name: string) {
   return function (
     target: any,
     propertyKey: string, // method
@@ -62,14 +62,14 @@ function g(name: string) {
   };
 }
 
-class C {
-  @g("Kaveh")
+class MyClass {
+  @MyDecorator("Kaveh")
   method(name: string) {
     console.log("method called", name);
   }
 }
 
-new C().method("Kasra");
+new MyClass().method("Kasra");
 
 /* ---------------------------------- CODE ---------------------------------- */
 form.addEventListener("submit", (e: Event) => {
