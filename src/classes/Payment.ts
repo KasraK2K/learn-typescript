@@ -1,4 +1,4 @@
-import { HasFormatter } from "../interfaces/HasFormatter.js";
+import { HasFormatter } from "../interfaces/HasFormatter";
 
 export class Payment implements HasFormatter {
   constructor(

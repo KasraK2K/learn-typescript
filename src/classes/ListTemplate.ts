@@ -1,5 +1,5 @@
-import { Position } from "../enums/position.js";
-import { HasFormatter } from "../interfaces/HasFormatter.js";
+import { Position } from "../enums/position";
+import { HasFormatter } from "../interfaces/HasFormatter";
 /**
  * @constructor get the ul element as container
  * @method render create html list item and add to container

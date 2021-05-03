@@ -1,9 +1,9 @@
 /* --------------------------------- IMPORTS -------------------------------- */
-import { Invoice } from "./classes/Invoice.js";
-import { ListTemplate } from "./classes/ListTemplate.js";
-import { Payment } from "./classes/Payment.js";
-import { Position } from "./enums/position.js";
-import { HasFormatter } from "./interfaces/HasFormatter.js";
+import { Invoice } from "./classes/Invoice";
+import { ListTemplate } from "./classes/ListTemplate";
+import { Payment } from "./classes/Payment";
+import { Position } from "./enums/position";
+import { HasFormatter } from "./interfaces/HasFormatter";
 
 /* -------------------------------- ELEMENTS -------------------------------- */
 const form = document.querySelector("form.new-item-form") as HTMLFormElement;

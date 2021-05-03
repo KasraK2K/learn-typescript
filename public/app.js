@@ -52,27 +52,27 @@ var docThree = {
     data: ["Kamal", "Kasra", "Kaveh"],
 };
 console.log(docThree.data);
-function g(name) {
+function MyDecorator(name) {
     return function (target, propertyKey, descriptor) {
         var fn = descriptor.value;
         descriptor.value = function () { return fn(name); };
     };
 }
-var C = (function () {
-    function C() {
+var MyClass = (function () {
+    function MyClass() {
     }
-    C.prototype.method = function (name) {
+    MyClass.prototype.method = function (name) {
         console.log("method called", name);
     };
     __decorate([
-        g("Kaveh"),
+        MyDecorator("Kaveh"),
         __metadata("design:type", Function),
         __metadata("design:paramtypes", [String]),
         __metadata("design:returntype", void 0)
-    ], C.prototype, "method", null);
-    return C;
+    ], MyClass.prototype, "method", null);
+    return MyClass;
 }());
-new C().method("Kasra");
+new MyClass().method("Kasra");
 form.addEventListener("submit", function (e) {
     e.preventDefault();
     var doc;
